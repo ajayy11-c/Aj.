@@ -1,120 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>NextTopers Live</title>
-  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Ajay Bhava 2026</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
     body {
       margin: 0;
-      padding: 0;
-      font-family: 'Montserrat', sans-serif;
-      background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
-      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #000;
+      color: #0f0; /* Dark green */
       display: flex;
       flex-direction: column;
       align-items: center;
-      min-height: 100vh;
-      padding: 30px 20px;
+      padding: 40px 20px;
     }
-   
-  
+
     h1 {
       font-size: 2.5rem;
-      margin-bottom: 30px;
-      text-align: center;
-      color: #f9f9f9;
+      margin-bottom: 10px;
     }
 
-    .video-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 30px;
-      width: 100%;
-      max-width: 1300px;
-    }
-
-    .video-card {
-      background: #1e2a38;
-      border-radius: 20px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-      overflow: hidden;
-      transition: transform 0.3s;
-    }
-
-    .video-card:hover {
-      transform: translateY(-5px);
-    }
-
-    video {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .video-title {
-      text-align: center;
+    p {
+      margin-top: 0;
       font-size: 1.2rem;
-      padding: 12px 0;
-      background: #17212b;
-      color: #f1f1f1;
-      font-weight: 600;
+      margin-bottom: 30px;
+      color: #0a0;
     }
 
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2rem;
-      }
+    .button {
+      background-color: #0f0;
+      color: #000;
+      padding: 12px 20px;
+      margin: 10px;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+      display: inline-block;
+    }
+
+    .button:hover {
+      background-color: #0c0;
     }
   </style>
 </head>
 <body>
-  <h1>NextToper~aj</h1>
-<div style="margin-bottom: 30px;">
-  <button onclick="window.location.href='index1.html'" 
-          style="padding: 10px 20px; font-size: 16px; border: none; border-radius: 8px; background-color: #4CAF50; color: white; cursor: pointer;">
-    ➤ Go to Ajay Page
-  </button>
-</div>
-  <div class="video-container">
-    <div class="video-card">
-      <video id="video1" controls></video>
-      <div class="video-title">Prasant Kirad</div>
-    </div>
-    <div class="video-card">
-      <video id="video2" controls></video>
-      <div class="video-title">Digraj Singh Rajput</div>
-    </div>
-    <div class="video-card">
-      <video id="video3" controls></video>
-      <div class="video-title">Shobit Nirwan</div>
-    </div>
-  </div>
+  <h1>Welcome to Ajay Bhava 2026</h1>
+  <p>Here you will get these following live contents</p>
 
-  <script>
-    function setupPlayer(id, src) {
-      const video = document.getElementById(id);
-      if (Hls.isSupported()) {
-        const hls = new Hls();
-        hls.loadSource(src);
-        hls.attachMedia(video);
-      } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-        video.src = src;
-      }
-    }
-
-    setupPlayer('video1', 'https://d2xqn12y4qo6nr.cloudfront.net/out/v1/4dacc3cc62ed4047b817b91580e11584/index.m3u8');
-    setupPlayer('video2', 'https://d1kw75zcv4u98c.cloudfront.net/out/v1/c32c373c9874430cb6039408745a1a5e/index_1.m3u8');
-    setupPlayer('video3', 'https://d1kw75zcv4u98c.cloudfront.net/out/v1/287810d967cc428e9bd992002e55b72c/index_3.m3u8');
-  </script>
-
-  
-  
+  <a href="#" class="button">Digraj Singh Rajput Live</a><br>
+  <a href="#" class="button">Prashanta Kirad Live</a><br>
+  <a href="#" class="button">Shobit Nirwan Live</a>
 </body>
 </html>
