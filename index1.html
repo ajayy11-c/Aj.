@@ -3,76 +3,99 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>padhle full screen karke </title>
+  <title>NextTopers Live</title>
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
     }
 
     body {
-      background: linear-gradient(135deg, #1e1e2f, #25253c);
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #ffffff;
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+      color: #fff;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
       min-height: 100vh;
-      padding: 20px;
-    }
-
-    .player-container {
-      background-color: #2d2d44;
-      border-radius: 20px;
-      padding: 25px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-      width: 90%;
-      max-width: 800px;
-      text-align: center;
+      padding: 30px 20px;
     }
 
     h1 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      letter-spacing: 2px;
-      color: #00ffc8;
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      text-align: center;
+      color: #f9f9f9;
+    }
+
+    .video-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      width: 100%;
+      max-width: 1300px;
+    }
+
+    .video-card {
+      background: #1e2a38;
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .video-card:hover {
+      transform: translateY(-5px);
     }
 
     video {
       width: 100%;
-      border-radius: 12px;
-      border: 2px solid #00ffc8;
-      outline: none;
+      height: auto;
+      display: block;
     }
 
-    .footer {
-      margin-top: 20px;
-      font-size: 0.9rem;
-      color: #bbb;
+    .video-title {
+      text-align: center;
+      font-size: 1.2rem;
+      padding: 12px 0;
+      background: #17212b;
+      color: #f1f1f1;
+      font-weight: 600;
     }
 
-    .footer a {
-      color: #00ffc8;
-      text-decoration: none;
-    }
-
-    .footer a:hover {
-      text-decoration: underline;
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="player-container">
-    <h1>PADHLE FULL SCREEN pe</h1>
-    <video controls>
-      <source src="https://d1qcficr3lu37x.cloudfront.net/file_library/videos/channel_vod_non_drm_hls/4352990/174481810831487880624/index_1.m3u8" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-    <div class="footer">
-      Made with love by <a href="#">Ajay</a>
+  <h1>NextToper~aj</h1>
+  <div class="video-container">
+    <div class="video-card">
+      <video id="video1" controls></video>
+      <div class="video-title">Prasant Kirad</div>
     </div>
-  </div>
+    </div>
+
+  <script>
+    function setupPlayer(id, src) {
+      const video = document.getElementById(id);
+      if (Hls.isSupported()) {
+        const hls = new Hls();
+        hls.loadSource(src);
+        hls.attachMedia(video);
+      } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        video.src = src;
+      }
+    }
+
+    setupPlayer('video1', 'https://d2xqn12y4qo6nr.cloudfront.net/out/v1/4dacc3cc62ed4047b817b91580e11584/index.m3u8');
+    
+  </script>
 </body>
 </html>
